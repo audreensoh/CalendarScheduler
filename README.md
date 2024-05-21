@@ -29,7 +29,7 @@ The main features of this calendar scheduler:
 
 ## Technology
 ### Java 8 with Java Swing
-The technology used for this project is Java 8 and Java Swing. This is the main requirement of this final project. 
+The technology used for this project is Java 8 and Java Swing.
 
 ### H2 Database Engine
 H2 database is a relational database which can be embedded in Java application. The initial plan was to use MySql but MySql is a server based database, and it will need to be running either locally or using cloud(AWS or GCP). After some research, it looks like H2 database meets the requirement where it can be embedded and also it provides a solution to persist the data on application shut down. For this project, the database starts along with the application and the application will create a file called CalendarSchedulerDBSnapshot.sql if it doesn’t exist and  write the data out to CalendarSchedulerDBSnapshot.sql before it exits. The database will be shutdown when the application shuts down. When we run the application again, it will load the data from CalendarSchedulerDBSnapshot.sql if this file exists. When we first run this application, the  CalendarSchedulerDBSnapshot.sql file is not created yet and in this case, it will call the function to create the required tables.
